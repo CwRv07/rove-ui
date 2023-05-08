@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint . --ext .js,.ts,.jsx,.tsx,.json --max-warnings 0"
+    "lint": "eslint . --ext .js,.ts,.jsx,.tsx,.json --max-warnings 0",
+    "lint:fix": "pnpm lint --fix"
   },
   "keywords": [],
   "author": "",
