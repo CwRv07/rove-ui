@@ -52,6 +52,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      typescript:
+        specifier: ^5.0.4
+        version: 5.0.4
 
   packages/components:
     dependencies:
