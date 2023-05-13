@@ -4,6 +4,9 @@
   "description": "",
   "author": "",
   "main": "index.js",
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "scripts": {
     "dev": "vite",
     "build:all": "vite build",
