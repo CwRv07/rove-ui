@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "vite",
     "build:all": "vite build",
-    "build": "esno ./scripts/build.ts",
+    "build": "esno ./scripts/build.ts && tsc -p tsconfig.build.json",
     "test": "vitest src",
     "test:ui": "vitest --ui",
     "test:run": "vitest run"

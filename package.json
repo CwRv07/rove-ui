@@ -4,6 +4,7 @@
   "description": "",
   "main": "./dist/rove-ui.umd.js",
   "module": "./dist/rove-ui.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": [
       "./dist/rove-ui.mjs"
