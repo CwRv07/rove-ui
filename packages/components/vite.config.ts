@@ -7,8 +7,8 @@ const config = defineConfig({
   plugins: [react(), unocss()],
   build: {
     outDir: '../../dist',
-    minify: 'esbuild',
-    sourcemap: true,
+    minify: true,
+    // sourcemap: true,
     lib: {
       entry: './src/index.ts',
       name: 'RoveUi',
@@ -20,6 +20,7 @@ const config = defineConfig({
     globals: true,
     environment: 'jsdom',
     coverage: {
+      provider: 'c8',
       reporter: ['text', 'json', 'html']
     }
   }

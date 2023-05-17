@@ -4,7 +4,4 @@ import Button from './button'
 
 export { Button }
 
-const defaultExport = {
-  Button
-}
-export default defaultExport
+export default { Button }

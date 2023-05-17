@@ -3,6 +3,7 @@ import fs from 'fs-extra'
 import * as path from 'path'
 import config from '../vite.config'
 import { build, InlineConfig, defineConfig, UserConfig } from 'vite'
+import { getComponentsBuildConfig,getComponentsPackageConfig } from './config'
 
 import { fileURLToPath } from 'url'
 const __filenameNew = fileURLToPath(import.meta.url)
@@ -23,35 +24,9 @@ const buildAll = async () => {
 
   for (const name of componentsDir) {
     const outDir = path.resolve(baseOutDir, name)
+    await build(defineConfig(getComponentsBuildConfig(name)) as InlineConfig)
 
-    const custom = {
-      lib: {
-        entry: path.resolve(srcDir, 'index'),
-        name, // 导出模块名
-        fileName: `index`,
-        formats: [`umd`]
-      },
-      outDir
-    }
-
-    const _config = {
-      ...config,
-      build: {
-        ...(config as UserConfig).build,
-        ...custom
-      }
-    }
-    await build(defineConfig(_config as UserConfig) as InlineConfig)
-
-    fs.outputFile(
-      path.resolve(outDir, `package.json`),
-      `{
-  "name": "@rove-ui/${name}",
-  "main": "index.umd.js",
-  "module": "index.umd.js"
-}`,
-      `utf-8`
-    )
+    fs.outputFile(path.resolve(outDir, `package.json`), getComponentsPackageConfig(name), `utf-8`)
   }
 }
 

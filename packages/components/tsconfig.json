@@ -7,6 +7,5 @@
     "emitDeclarationOnly": true,
     "declaration": true
   },
-  "include": ["src/**/*.ts","src/**/*.tsx"],
-  "exclude": ["src/**/__test__/*"]
+  "include": ["src/**/*.ts","src/**/*.tsx"]
 }

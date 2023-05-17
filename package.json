@@ -6,14 +6,18 @@
   "module": "./dist/rove-ui.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": [
-      "./dist/rove-ui.mjs"
-    ],
-    "./style": "./dist/style.css"
+    ".": {
+      "import": "./dist/rove-ui.mjs",
+      "require": "./dist/rove-ui.umi.js"
+    },
+    "./dist/*": "./dist/*/index",
+    "./style.css": "./dist/style.css"
   },
   "scripts": {
+    "build": "pnpm run -C packages/components build",
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx,.json --max-warnings 0",
-    "lint:fix": "pnpm lint --fix"
+    "lint:fix": "pnpm lint --fix",
+    "play": "pnpm run -C packages/play dev"
   },
   "keywords": [],
   "author": "",
