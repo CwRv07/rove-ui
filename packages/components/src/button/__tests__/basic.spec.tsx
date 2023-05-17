@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
 
-import { Button } from '../index'
+import Button from '../index'
 
 describe('Button 按钮', () => {
   it('按钮可以被正确地挂载、更新和卸载', () => {
